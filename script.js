@@ -14,36 +14,39 @@ function duelWinner(playerSelection, computerSelection) {
     "What do you pick? Rock, paper or scissors."
   ).toLowerCase();
   computerSelection = getComputerChoice();
-  console.log("You choose " + playerSelection);
-  console.log("Computer choose " + computerSelection);
 
   if (playerSelection === computerSelection) {
-    playerWinCount++;
-    computerWinCount++;
+    console.log(`You choose ${playerSelection}. Computer choose ${computerSelection}.\nIt's equal!` );
     return playerWinCount, computerWinCount;
   }
   if (playerSelection === "rock" && computerSelection === "scissors") {
     playerWinCount++;
+    console.log(`You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou won this round!` );
     return playerWinCount;
   }
   if (playerSelection === "rock" && computerSelection === "paper") {
     computerWinCount++;
+    console.log(`You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou lost this round!` );
     return computerWinCount;
   }
   if (playerSelection === "scissors" && computerSelection === "paper") {
     playerWinCount++;
+    console.log(`You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou won this round!` );
     return playerWinCount;
   }
   if (playerSelection === "scissors" && computerSelection === "rock") {
     computerWinCount++;
+    console.log(`You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou lost this round!` );
     return computerWinCount;
   }
   if (playerSelection === "paper" && computerSelection === "rock") {
     playerWinCount++;
+    console.log(`You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou won this round!` );
     return playerWinCount;
   }
   if (playerSelection === "paper" && computerSelection === "scissors") {
     computerWinCount++;
+    console.log(`You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou lost this round!` );
     return computerWinCount;
   }
 }
@@ -51,7 +54,15 @@ function duelWinner(playerSelection, computerSelection) {
 function game() {
   for (let i = 1; i <= 5; i++) {
     duelWinner();
-    console.log(i);
+  }
+  if (playerWinCount > computerWinCount) {
+    console.log("Player wins!")
+  }
+  if (computerWinCount > playerWinCount ) {
+    console.log("Computer wins!");
+  } 
+  if (computerWinCount === playerWinCount){
+    console.log("It's equal!");
   }
 }
 
