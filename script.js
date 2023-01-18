@@ -1,11 +1,12 @@
 let playerWinCount = 0;
 let computerWinCount = 0;
-let playerChoiceRock = "rock";
-let playerChoicePaper = "paper";
-let playerChoiceScissors = "scissors";
 let rock = document.querySelector(".rock");
 let scissors = document.querySelector(".scissors");
 let paper = document.querySelector(".paper");
+let resultsParent = document.querySelector(".results_parent");
+
+const newElement = document.createElement("div");
+newElement.classList.add("results");
 
 // Function to get the computer choice
 function getComputerChoice() {
@@ -22,6 +23,8 @@ function duelWinner(playerSelection, computerSelection) {
     console.log(
       `You choose ${playerSelection}. Computer choose ${computerSelection}.\nIt's equal!`
     );
+    newElement.textContent = `You choose ${playerSelection}. Computer choose ${computerSelection}.\nIt's equal!`;
+    resultsParent.appendChild(newElement);
     return playerWinCount, computerWinCount;
   }
   if (playerSelection === "rock" && computerSelection === "scissors") {
@@ -29,6 +32,9 @@ function duelWinner(playerSelection, computerSelection) {
     console.log(
       `You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou won this round!`
     );
+    newElement.textContent = `You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou won this round!`;
+    resultsParent.appendChild(newElement);
+
     return playerWinCount;
   }
   if (playerSelection === "rock" && computerSelection === "paper") {
@@ -36,6 +42,9 @@ function duelWinner(playerSelection, computerSelection) {
     console.log(
       `You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou lost this round!`
     );
+    newElement.textContent = `You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou lost this round!`;
+    resultsParent.appendChild(newElement);
+
     return computerWinCount;
   }
   if (playerSelection === "scissors" && computerSelection === "paper") {
@@ -43,6 +52,9 @@ function duelWinner(playerSelection, computerSelection) {
     console.log(
       `You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou won this round!`
     );
+    newElement.textContent = `You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou won this round!`;
+    resultsParent.appendChild(newElement);
+
     return playerWinCount;
   }
   if (playerSelection === "scissors" && computerSelection === "rock") {
@@ -50,6 +62,9 @@ function duelWinner(playerSelection, computerSelection) {
     console.log(
       `You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou lost this round!`
     );
+    newElement.textContent = `You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou lost this round!`;
+    resultsParent.appendChild(newElement);
+
     return computerWinCount;
   }
   if (playerSelection === "paper" && computerSelection === "rock") {
@@ -57,6 +72,9 @@ function duelWinner(playerSelection, computerSelection) {
     console.log(
       `You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou won this round!`
     );
+    newElement.textContent = `You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou won this round!`;
+    resultsParent.appendChild(newElement);
+
     return playerWinCount;
   }
   if (playerSelection === "paper" && computerSelection === "scissors") {
@@ -64,6 +82,9 @@ function duelWinner(playerSelection, computerSelection) {
     console.log(
       `You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou lost this round!`
     );
+    newElement.textContent = `You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou lost this round!`;
+    resultsParent.appendChild(newElement);
+
     return computerWinCount;
   }
 }
@@ -80,7 +101,6 @@ function game(input) {
     console.log("It's equal!");
   }
 }
-
 
 rock.addEventListener("click", () => game("rock"));
 paper.addEventListener("click", () => game("paper"));
