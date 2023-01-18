@@ -6,6 +6,8 @@ let paper = document.querySelector(".paper");
 let resultsParent = document.querySelector(".results_parent");
 
 const newElement = document.createElement("div");
+const gameScore = document.createElement("div");
+
 newElement.classList.add("results");
 
 // Function to get the computer choice
@@ -20,71 +22,65 @@ function duelWinner(playerSelection, computerSelection) {
   computerSelection = getComputerChoice();
 
   if (playerSelection === computerSelection) {
-    console.log(
-      `You choose ${playerSelection}. Computer choose ${computerSelection}.\nIt's equal!`
-    );
     newElement.textContent = `You choose ${playerSelection}. Computer choose ${computerSelection}.\nIt's equal!`;
     resultsParent.appendChild(newElement);
+    gameScore.textContent = `Player: ${playerWinCount} | Computer: ${computerWinCount}`;
+    resultsParent.appendChild(gameScore);
+    
     return playerWinCount, computerWinCount;
   }
   if (playerSelection === "rock" && computerSelection === "scissors") {
     playerWinCount++;
-    console.log(
-      `You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou won this round!`
-    );
     newElement.textContent = `You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou won this round!`;
     resultsParent.appendChild(newElement);
+    gameScore.textContent = `Player: ${playerWinCount} | Computer: ${computerWinCount}`;
+    resultsParent.appendChild(gameScore);
 
     return playerWinCount;
   }
   if (playerSelection === "rock" && computerSelection === "paper") {
     computerWinCount++;
-    console.log(
-      `You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou lost this round!`
-    );
     newElement.textContent = `You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou lost this round!`;
     resultsParent.appendChild(newElement);
+    gameScore.textContent = `Player: ${playerWinCount} | Computer: ${computerWinCount}`;
+    resultsParent.appendChild(gameScore);
 
     return computerWinCount;
   }
   if (playerSelection === "scissors" && computerSelection === "paper") {
     playerWinCount++;
-    console.log(
-      `You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou won this round!`
-    );
     newElement.textContent = `You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou won this round!`;
     resultsParent.appendChild(newElement);
-
+    gameScore.textContent = `Player: ${playerWinCount} | Computer: ${computerWinCount}`;
+    resultsParent.appendChild(gameScore);
+    
     return playerWinCount;
   }
   if (playerSelection === "scissors" && computerSelection === "rock") {
     computerWinCount++;
-    console.log(
-      `You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou lost this round!`
-    );
     newElement.textContent = `You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou lost this round!`;
     resultsParent.appendChild(newElement);
+    gameScore.textContent = `Player: ${playerWinCount} | Computer: ${computerWinCount}`;
+    resultsParent.appendChild(gameScore);
 
     return computerWinCount;
   }
   if (playerSelection === "paper" && computerSelection === "rock") {
     playerWinCount++;
-    console.log(
-      `You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou won this round!`
-    );
     newElement.textContent = `You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou won this round!`;
     resultsParent.appendChild(newElement);
+    gameScore.textContent = `Player: ${playerWinCount} | Computer: ${computerWinCount}`;
+    resultsParent.appendChild(gameScore);
 
     return playerWinCount;
   }
   if (playerSelection === "paper" && computerSelection === "scissors") {
     computerWinCount++;
-    console.log(
-      `You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou lost this round!`
-    );
     newElement.textContent = `You choose ${playerSelection}. Computer choose ${computerSelection}.\nYou lost this round!`;
     resultsParent.appendChild(newElement);
-
+    gameScore.textContent = `Player: ${playerWinCount} | Computer: ${computerWinCount}`;
+    resultsParent.appendChild(gameScore);
+    
     return computerWinCount;
   }
 }
