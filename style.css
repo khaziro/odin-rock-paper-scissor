@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  padding: 40px 40px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.results_parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
